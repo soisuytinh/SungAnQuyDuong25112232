@@ -1,8 +1,3 @@
-# ══════════════════════════════════════════════════════════════
-#  Bài 3: Quản lý cán bộ đơn vị sản xuất — Menu tương tác
-# ══════════════════════════════════════════════════════════════
-
-
 class CanBo:
     """Lớp cha — thông tin cơ bản của mọi cán bộ."""
 
@@ -26,7 +21,6 @@ class CanBo:
         return f"{self.loai_cb():<10s} | {self._ho_ten}"
 
 
-# ─────────────────────────────────────────────────────────────
 class CongNhan(CanBo):
     """Công nhân — có thêm thuộc tính Bậc (1-10).
 
@@ -49,7 +43,6 @@ class CongNhan(CanBo):
         print(f"  Bậc       : {self.__bac}")
 
 
-# ─────────────────────────────────────────────────────────────
 class KySu(CanBo):
     """Kỹ sư — có thêm thuộc tính Ngành đào tạo."""
 
@@ -66,7 +59,6 @@ class KySu(CanBo):
         print(f"  Ngành ĐT  : {self.__nganh_dt}")
 
 
-# ─────────────────────────────────────────────────────────────
 class NhanVienSX(CanBo):
     """Nhân viên sản xuất — có thêm thuộc tính Công việc.
 
@@ -85,10 +77,6 @@ class NhanVienSX(CanBo):
         super().hien_thi()
         print(f"  Công việc : {self.__cong_viec}")
 
-
-# ═════════════════════════════════════════════════════════════
-#  Lớp QLCB — Quản lý danh sách cán bộ với menu tương tác
-# ═════════════════════════════════════════════════════════════
 class QLCB:
     """Lớp quản lý cán bộ — cung cấp menu CRUD đơn giản.
 
@@ -109,7 +97,6 @@ class QLCB:
         print("  3. Nhân viên")
         loai = input("  Chọn loại (1/2/3): ").strip()
 
-        # Nhập thông tin chung
         ho_ten    = input("  Họ tên    : ")
         tuoi      = int(input("  Tuổi      : "))
         gioi_tinh = input("  Giới tính : ")
