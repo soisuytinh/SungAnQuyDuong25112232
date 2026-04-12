@@ -1,8 +1,3 @@
-# ══════════════════════════════════════════════════════════════
-#  Bài 1: Hệ thống phân loại Hàng hóa — Inheritance cơ bản
-# ══════════════════════════════════════════════════════════════
-
-
 class HangHoa:
     """Lớp cha — chứa thuộc tính chung của mọi loại hàng hóa.
 
@@ -29,10 +24,6 @@ class HangHoa:
         print(f"  Tên hàng : {self.__ten_hang}")
         print(f"  Nhà SX   : {self.__nha_sx}")
 
-
-# ─────────────────────────────────────────────────────────────
-#  Lớp con 1: HangDienMay
-# ─────────────────────────────────────────────────────────────
 class HangDienMay(HangHoa):
     """Kế thừa HangHoa, thêm: giá, bảo hành, điện áp, công suất.
 
@@ -42,13 +33,11 @@ class HangDienMay(HangHoa):
 
     def __init__(self, ma_hang, ten_hang, nha_sx,
                  gia, tg_baohanh, dien_ap, cong_suat):
-        # Gọi constructor lớp cha để khởi tạo phần chung
         super().__init__(ma_hang, ten_hang, nha_sx)
-        # Khởi tạo phần riêng của HangDienMay
         self.__gia        = gia
-        self.__tg_baohanh = tg_baohanh   # tháng
-        self.__dien_ap    = dien_ap       # V
-        self.__cong_suat  = cong_suat     # W
+        self.__tg_baohanh = tg_baohanh   
+        self.__dien_ap    = dien_ap      
+        self.__cong_suat  = cong_suat    
 
     def hien_thi(self):
         """Override hien_thi(): gọi lớp cha + in thêm thông tin riêng."""
@@ -60,9 +49,6 @@ class HangDienMay(HangHoa):
         print(f"  Công suất: {self.__cong_suat} W")
 
 
-# ─────────────────────────────────────────────────────────────
-#  Lớp con 2: HangSanhSu
-# ─────────────────────────────────────────────────────────────
 class HangSanhSu(HangHoa):
     """Kế thừa HangHoa, thêm: giá, loại nguyên liệu."""
 
@@ -79,9 +65,6 @@ class HangSanhSu(HangHoa):
         print(f"  Nguyên liệu : {self.__loai_nguyen_lieu}")
 
 
-# ─────────────────────────────────────────────────────────────
-#  Lớp con 3: HangThucPham
-# ─────────────────────────────────────────────────────────────
 class HangThucPham(HangHoa):
     """Kế thừa HangHoa, thêm: giá, ngày SX, ngày hết hạn."""
 
@@ -98,9 +81,6 @@ class HangThucPham(HangHoa):
         print(f"  Giá        : {self.__gia:,.0f} VNĐ")
         print(f"  Ngày SX    : {self.__ngay_sx}")
         print(f"  Hết hạn    : {self.__ngay_het_han}")
-
-
-# ──── Demo ────────────────────────────────────────────────────
 
 dm = HangDienMay(
     "DM001", "Tủ lạnh Inverter 360L", "Samsung",
