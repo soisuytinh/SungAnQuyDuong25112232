@@ -10,7 +10,6 @@ class SieuNhan:
                 f"Màu: {self.mau_sac:8} | Sức mạnh: {self.suc_manh}")
 
 
-# ---- Nhập danh sách bằng while ----
 danh_sach = []
 print("=== NHẬP DANH SÁCH SIÊU NHÂN ===")
 print("(Nhấn Enter để kết thúc)\n")
@@ -25,7 +24,6 @@ while True:
     danh_sach.append(SieuNhan(ten, vu_khi, mau_sac, suc_manh))
     print(f"  → Đã thêm {ten}!\n")
 
-# ---- In danh sách bằng for ----
 print(f"\n=== DANH SÁCH {len(danh_sach)} SIÊU NHÂN ===")
 for i, sn in enumerate(danh_sach, 1):
     print(f"{i}.", sn)
